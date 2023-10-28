@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SCSTChat.controller.ChatRoomViewController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0">
+         <children>
+            <ImageView fitHeight="600.0" fitWidth="900.0">
+               <image>
+                  <Image url="@../images/背景.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D height="600.0" minX="150.0" width="900.0" />
+               </viewport>
+            </ImageView>
+            <AnchorPane layoutX="25.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="850.0">
+               <children>
+                  <ImageView fitHeight="550.0" fitWidth="850.0">
+                     <image>
+                        <Image url="@../images/背景.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="550.0" minX="175.0" minY="25.0" width="850.0" />
+                     </viewport>
+                     <effect>
+                        <GaussianBlur radius="16.0" />
+                     </effect>
+                  </ImageView>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="250.0">
+                     <children>
+                        <ImageView fitHeight="550.0" fitWidth="250.0">
+                           <image>
+                              <Image url="@../images/左景.png" />
+                           </image>
+                           <effect>
+                              <GaussianBlur radius="16.0" />
+                           </effect>
+                        </ImageView>
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="250.0" styleClass="left_from" stylesheets="@css/ChatRoomView.css">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/SCSTChat.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D height="400.0" minX="100.0" minY="100.0" width="450.0" />
+                                 </viewport>
+                              </ImageView>
+                              <TextArea fx:id="receivedTextField" editable="false" layoutX="15.0" layoutY="300.0" opacity="0.9" prefHeight="100.0" prefWidth="220.0" promptText="Here is the message received and encrypted.">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextArea>
+                              <TextArea fx:id="encryptedTextField" editable="false" layoutX="15.0" layoutY="425.0" opacity="0.9" prefHeight="100.0" prefWidth="220.0" promptText="Here is the your message encrypted.">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextArea>
+                              <Label layoutX="75.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" text="Your IP" textAlignment="CENTER" textFill="#cef0ce">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font></Label>
+                              <Label layoutX="15.0" layoutY="400.0" text="Encrypted" textFill="#cef0ce">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="15.0" layoutY="275.0" text="Received" textFill="#cef0ce">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="myIP" layoutX="25.0" layoutY="180.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" text="Waiting... ..." textAlignment="CENTER" textFill="#38c360">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="250.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="600.0" style="-fx-background-color: rgba(206, 240, 206,0.5); -fx-background-radius: 16px;">
+                     <children>
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+                           <children>
+                              <Label layoutX="5.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="100.0" text="Peer IP" textAlignment="CENTER" textFill="#00521f">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="peerIP" layoutX="125.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="200.0" text="Waiting... ..." textAlignment="CENTER" textFill="#38c360">
+                                 <font>
+                                    <Font name="System Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <ScrollPane id="scrollPane" fx:id="scrollPane" layoutX="10.0" layoutY="50.0" prefHeight="350.0" prefWidth="580.0" style="-fx-background-color: 255,255,255,0.8;" styleClass="viewport" stylesheets="@css/ChatRoomView.css">
+                                 <content>
+                                    <VBox fx:id="messageBox" layoutX="5.0" prefWidth="570.0" />
+                                 </content></ScrollPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutY="425.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="600.0">
+                           <children>
+                              <TextField fx:id="inputMessage" alignment="TOP_LEFT" layoutX="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="580.0" promptText="Input words to send." style="-fx-background-color: rgba(255,255,255,0.8); -fx-background-radius: 16px;" />
+                              <Button fx:id="send" layoutX="540.0" layoutY="80.0" mnemonicParsing="false" onAction="#sendMessage" stylesheets="@css/ChatRoomView.css" textFill="#00521f">
+                                 <graphic>
+                                    <ImageView fitHeight="30.0" fitWidth="30.0">
+                                       <image>
+                                          <Image url="@../images/发送.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="file" layoutX="10.0" layoutY="393.0" mnemonicParsing="false" onAction="#openFile" stylesheets="@css/ChatRoomView.css">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0">
+                                 <image>
+                                    <Image url="@../images/打开文件.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

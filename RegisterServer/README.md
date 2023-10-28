@@ -26,3 +26,5 @@ Here is the Register Server for SCST Chat developed by JavaSE-17. Let's have a q
 ```
 
 The database here is mysql-server.
+
+Last but not least, the C-S protocol design refers to [java in the network: P2P chat system](https://blog.csdn.net/qq_40866897/article/details/82958395).

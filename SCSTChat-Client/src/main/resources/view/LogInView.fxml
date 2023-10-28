@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SCSTChat.controller.LogInViewController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="300.0" />
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: rgba(255,255,255,0.85); -fx-background-radius: 26px;">
+         <children>
+            <ImageView fitHeight="600.0" fitWidth="900.0">
+               <image>
+                  <Image url="@../images/背景.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D height="600.0" minX="150.0" width="900.0" />
+               </viewport>
+            </ImageView>
+            <AnchorPane layoutX="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="800.0">
+               <children>
+                  <ImageView fx:id="ClientRegister" fitHeight="450.0" fitWidth="200.0" layoutY="75.0">
+                     <image>
+                        <Image url="@../images/左景.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="372.0" fitWidth="600.0" layoutX="200.0" layoutY="78.0">
+                     <image>
+                        <Image url="@../images/背景.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="450.0" minX="400.0" minY="75.0" width="600.0" />
+                     </viewport>
+                     <effect>
+                        <GaussianBlur radius="16.0" />
+                     </effect>
+                  </ImageView>
+                  <AnchorPane layoutX="200.0" layoutY="75.0" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: rgba(255,255,255,0.8); -fx-background-radius: 16px;">
+                     <children>
+                        <ImageView fitHeight="176.0" fitWidth="200.0" layoutX="400.0" layoutY="-74.0">
+                           <image>
+                              <Image url="@../images/SCSTChat.png" />
+                           </image>
+                        </ImageView>
+                        <TextField layoutX="195.0" layoutY="139.0" promptText="Enter SCST ID">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Button layoutX="200.0" layoutY="199.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="200.0" stylesheets="@css/LogInView.css" text="Log In" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="quickStart" alignment="TOP_CENTER" layoutX="447.0" layoutY="395.0" mnemonicParsing="false" onAction="#OpenQuickStartView" stylesheets="@css/LogInView.css" text="Quick Start !" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="register" layoutX="231.0" layoutY="244.0" onMouseClicked="#openRegisterWindow" stylesheets="@css/LogInView.css" text="No SCST ID? Apply one!">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
