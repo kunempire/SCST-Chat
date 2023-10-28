@@ -55,7 +55,7 @@ Here is the client desktop application for SCSTChat with GUI, developed by java-
     │           │   ├── ChatRoomView.css
     │           │   ├── LogInView.css
     │           │   └── QuickStartView.css
-    │           ├── ChatRoomView.fxml
+    │           ├── ChatRoomView.fxml # design with tools like SenceBuilder
     │           ├── LogInView.fxml
     │           └── QuickStartView.fxml
     └── test # a good project should test first
@@ -64,7 +64,7 @@ Here is the client desktop application for SCSTChat with GUI, developed by java-
     
 The key of GUI application is how to deal with the relationship between GUI thread and other back threads. Let me show you how SCSTChat-Client works.
 
-![clientThreadManage](../images/clientThreadManage.png)
+<div align=center><img src="../images/clientThreadManage.png"></div>
 
 You will gain a deeper insight into the JavaFX with SpringBoot through this project. For example, how to create handle (which SpringBoot call "wire") to connect GUI thread with other threads because only GUI thread can change its components.
 
